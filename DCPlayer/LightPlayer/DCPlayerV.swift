@@ -59,12 +59,12 @@ class DCPlayerV: UIView {
         
         //播放中时间监听
         timeObserver = dcPlayer!.addPeriodicTimeObserver(forInterval: CMTime.init(value: CMTimeValue(1), timescale: CMTimeScale(1)), queue: DispatchQueue.main) { [weak self] curTime in
-            if !__CurVC().isKind(of: DCVideoVC.self) {//如果不在播放界面就暂停
-                self!.videoPause(true)
-                return
-            }
+//            if !__CurVC().isKind(of: DCVideoVC.self) {//如果不在播放界面就暂停
+//                self!.videoPause(true)
+//                return
+//            }
             self!.isShowBuffV = false
-            print("CMTimeGetSeconds(curTime): \(CMTimeGetSeconds(curTime))  \(__CurVC())")
+            print("CMTimeGetSeconds(curTime): \(CMTimeGetSeconds(curTime))")
             self!.leftTimeL.text = CMTimeGetSeconds(curTime).timeStr
             self!.sliderV.setValue(Float(CMTimeGetSeconds(curTime)/self!.totalTime), animated: true)
             self!.playingTimeBlock?(CMTimeGetSeconds(curTime), self!.totalTime)
@@ -408,10 +408,8 @@ class DCPlayerV: UIView {
 
 //MARK:-一些工具
 func __CurVC() -> UIViewController! {//获取当前所在VC 有UITabBarController和UINavigationController
-    let appDele = UIApplication.shared.delegate as! AppDelegate
-    let window = appDele.window
-    
-    if let rootVC = window?.rootViewController {
+
+    if let rootVC = __keyWindow.rootViewController {
         if rootVC.isKind(of: UITabBarController.self) {
             let curSelectedNavVC = (rootVC as! UITabBarController).selectedViewController as! UINavigationController
             return curSelectedNavVC.viewControllers.last
