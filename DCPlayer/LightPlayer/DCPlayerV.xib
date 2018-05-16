@@ -34,24 +34,24 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2A-Q2-REp">
-                                    <rect key="frame" x="5" y="16" width="50" height="50"/>
+                                    <rect key="frame" x="5" y="11" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="A2A-Q2-REp" secondAttribute="height" multiplier="1:1" id="9ET-7C-2Ji"/>
                                         <constraint firstAttribute="width" constant="50" id="OOq-Mg-zDG"/>
                                     </constraints>
-                                    <state key="normal" image="back"/>
+                                    <state key="normal" image="back.png"/>
                                     <connections>
                                         <action selector="backBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="2wu-yh-rhe"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jxuk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-cA-hZS">
-                                    <rect key="frame" x="55" y="32" width="28" height="18"/>
+                                    <rect key="frame" x="55" y="27" width="28" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6e-IO-Kll">
-                                    <rect key="frame" x="325" y="26" width="30" height="30"/>
+                                    <rect key="frame" x="325" y="21" width="30" height="30"/>
                                     <state key="normal" title="1.0">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -63,7 +63,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="l6e-IO-Kll" firstAttribute="centerY" secondItem="iM8-cA-hZS" secondAttribute="centerY" id="2vv-RY-J72"/>
-                                <constraint firstAttribute="bottom" secondItem="iM8-cA-hZS" secondAttribute="bottom" id="AeF-GY-UOs"/>
+                                <constraint firstAttribute="bottom" secondItem="iM8-cA-hZS" secondAttribute="bottom" constant="5" id="AeF-GY-UOs"/>
                                 <constraint firstItem="iM8-cA-hZS" firstAttribute="centerY" secondItem="A2A-Q2-REp" secondAttribute="centerY" id="JuI-S9-67W"/>
                                 <constraint firstAttribute="height" constant="50" id="acZ-ka-bUT"/>
                                 <constraint firstItem="A2A-Q2-REp" firstAttribute="leading" secondItem="OTe-7Z-BF9" secondAttribute="leading" constant="5" id="all-vK-325"/>
@@ -76,7 +76,7 @@
                                 <constraint firstAttribute="width" constant="25" id="AmO-vy-HPi"/>
                                 <constraint firstAttribute="width" secondItem="3KD-n7-Jhc" secondAttribute="height" multiplier="4:5" id="Kom-xA-4BG"/>
                             </constraints>
-                            <state key="normal" image="BMPlayer_play"/>
+                            <state key="normal" image="Player_play.png"/>
                             <connections>
                                 <action selector="startOrBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="NhH-MN-0oW"/>
                             </connections>
@@ -87,7 +87,7 @@
                                 <constraint firstAttribute="width" constant="30" id="jPr-dC-sE7"/>
                                 <constraint firstAttribute="width" secondItem="9sJ-f9-Qnl" secondAttribute="height" id="pZx-Lt-gYf"/>
                             </constraints>
-                            <state key="normal" image="BMPlayer_replay"/>
+                            <state key="normal" image="Player_replay.png"/>
                             <connections>
                                 <action selector="rePlayBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="aEk-6R-bht"/>
                             </connections>
@@ -96,16 +96,16 @@
                             <rect key="frame" x="169.5" y="99" width="37" height="37"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-uK-8x1">
-                            <rect key="frame" x="169.5" y="168" width="36.5" height="16"/>
+                            <rect key="frame" x="169.5" y="172" width="36.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSk-gU-lRR" userLabel="ViewLow">
-                            <rect key="frame" x="0.0" y="189" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="193" width="375" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMQ-af-NbU">
-                                    <rect key="frame" x="20" y="15.5" width="40" height="14.5"/>
+                                    <rect key="frame" x="20" y="10" width="40" height="14.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="Gsv-Cc-2Rz"/>
                                     </constraints>
@@ -114,12 +114,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-Nm-z7C">
-                                    <rect key="frame" x="70" y="21.5" width="210" height="2"/>
+                                    <rect key="frame" x="70" y="16" width="205" height="2"/>
                                     <color key="progressTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </progressView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8WD-qi-kk0">
-                                    <rect key="frame" x="68" y="7.5" width="214" height="31"/>
+                                    <rect key="frame" x="68" y="2" width="209" height="31"/>
                                     <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
@@ -130,7 +130,7 @@
                                     </connections>
                                 </slider>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKH-0b-eG3">
-                                    <rect key="frame" x="290" y="15.5" width="40" height="14.5"/>
+                                    <rect key="frame" x="285" y="10" width="40" height="14.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="SUa-kE-d1k"/>
                                     </constraints>
@@ -139,8 +139,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOd-Je-PmB">
-                                    <rect key="frame" x="340" y="11" width="15" height="22"/>
-                                    <state key="normal" image="BMPlayer_fullscreen"/>
+                                    <rect key="frame" x="335" y="3" width="20" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="zOd-Je-PmB" secondAttribute="height" multiplier="15:22" id="Dke-MT-CdQ"/>
+                                        <constraint firstAttribute="width" constant="20" id="Pe8-fV-oKb"/>
+                                    </constraints>
+                                    <state key="normal" image="Player_fullscreen.png"/>
                                     <connections>
                                         <action selector="fullBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="ChG-5P-1gR"/>
                                     </connections>
@@ -150,16 +154,16 @@
                             <constraints>
                                 <constraint firstItem="fMQ-af-NbU" firstAttribute="leading" secondItem="lSk-gU-lRR" secondAttribute="leading" constant="20" id="4AX-Lg-MRV"/>
                                 <constraint firstItem="ZKH-0b-eG3" firstAttribute="leading" secondItem="8WD-qi-kk0" secondAttribute="trailing" constant="10" id="Ejo-lE-Whf"/>
-                                <constraint firstAttribute="height" constant="44" id="PpR-u9-VFd"/>
+                                <constraint firstAttribute="height" constant="40" id="PpR-u9-VFd"/>
                                 <constraint firstAttribute="trailing" secondItem="zOd-Je-PmB" secondAttribute="trailing" constant="20" id="YP0-dm-3oc"/>
-                                <constraint firstItem="zOd-Je-PmB" firstAttribute="centerY" secondItem="lSk-gU-lRR" secondAttribute="centerY" id="Z1P-bX-BGy"/>
                                 <constraint firstItem="8WD-qi-kk0" firstAttribute="leading" secondItem="fMQ-af-NbU" secondAttribute="trailing" constant="10" id="ZI2-Tf-pWF"/>
                                 <constraint firstItem="sfo-Nm-z7C" firstAttribute="centerX" secondItem="8WD-qi-kk0" secondAttribute="centerX" id="aMY-pX-zci"/>
                                 <constraint firstItem="8WD-qi-kk0" firstAttribute="centerY" secondItem="fMQ-af-NbU" secondAttribute="centerY" id="cXf-ZR-fzW"/>
                                 <constraint firstItem="zOd-Je-PmB" firstAttribute="leading" secondItem="ZKH-0b-eG3" secondAttribute="trailing" constant="10" id="fPj-lD-Cet"/>
-                                <constraint firstItem="fMQ-af-NbU" firstAttribute="centerY" secondItem="lSk-gU-lRR" secondAttribute="centerY" id="mwf-x5-ZSt"/>
+                                <constraint firstItem="fMQ-af-NbU" firstAttribute="centerY" secondItem="lSk-gU-lRR" secondAttribute="centerY" constant="-3" id="mwf-x5-ZSt"/>
                                 <constraint firstItem="sfo-Nm-z7C" firstAttribute="width" secondItem="8WD-qi-kk0" secondAttribute="width" id="nfl-Fl-wAQ"/>
                                 <constraint firstItem="ZKH-0b-eG3" firstAttribute="centerY" secondItem="fMQ-af-NbU" secondAttribute="centerY" id="qex-JX-CZH"/>
+                                <constraint firstItem="zOd-Je-PmB" firstAttribute="centerY" secondItem="fMQ-af-NbU" secondAttribute="centerY" id="rZE-pi-HQc"/>
                                 <constraint firstItem="sfo-Nm-z7C" firstAttribute="centerY" secondItem="8WD-qi-kk0" secondAttribute="centerY" id="s90-XD-aZU"/>
                             </constraints>
                         </view>
@@ -262,10 +266,10 @@
         </view>
     </objects>
     <resources>
-        <image name="BMPlayer_fullscreen" width="15" height="15"/>
-        <image name="BMPlayer_play" width="36" height="45"/>
-        <image name="BMPlayer_replay" width="30" height="30"/>
-        <image name="back" width="80" height="80"/>
+        <image name="Player_fullscreen.png" width="15" height="15"/>
+        <image name="Player_play.png" width="36" height="45"/>
+        <image name="Player_replay.png" width="30" height="30"/>
+        <image name="back.png" width="80" height="80"/>
         <image name="guessPlaceholder" width="572" height="376"/>
         <image name="icon_brightness" width="64" height="115"/>
         <image name="icon_schedule" width="76" height="107"/>

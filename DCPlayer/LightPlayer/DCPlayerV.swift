@@ -4,6 +4,7 @@
 //
 //  Created by JunWin on 2018/5/2.
 //  Copyright © 2018年 freeWorld2018. All rights reserved.
+
 /*
  使用Xcode9.2 swift4基于AVPlayer封装的轻量视频播放控件
  支持常用手势操作, 左右滑动控制播放进度, 上下滑动控制音量和亮度
@@ -17,7 +18,7 @@ import MediaPlayer
 class DCPlayerV: UIView {
     
     deinit {
-        topMesV.showMes("\(type(of: self))")
+        print("播放控件已释放 \(type(of: self))")
         releasePlayer()
     }
     override func awakeFromNib() {
@@ -37,15 +38,14 @@ class DCPlayerV: UIView {
             cancelWillDisaperControlV()
             videoItem = nil
             dcPlayer = nil
-            totalTime = nil
+            totalTime = 999
         }
     }
     
     func initPlayer() {//初始化
         releasePlayer()
         
-        videoItem = AVPlayerItem.init(url: URL.init(string: myHaq.videoUrl)!)
-
+        videoItem = AVPlayerItem.init(url: URL.init(string: videoUrl)!)//初始化AVPlayerItem
         //各种状态监听
         NotificationCenter.default.addObserver(self, selector: #selector(finishPlay), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoItem)
         videoItem.addObserver(self, forKeyPath: "status", options: .new, context: nil)
@@ -53,14 +53,14 @@ class DCPlayerV: UIView {
         videoItem.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
         videoItem.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
         
-        dcPlayer = AVPlayer.init(playerItem: videoItem)
-        dcVideoLayer.player = dcPlayer
+        dcPlayer = AVPlayer.init(playerItem: videoItem)//初始化AVPlayer
+        dcVideoLayer.player = dcPlayer//设置AVPlayer的显示layer
         dcVideoLayer.frame = bounds
         
         //播放中时间监听
         timeObserver = dcPlayer!.addPeriodicTimeObserver(forInterval: CMTime.init(value: CMTimeValue(1), timescale: CMTimeScale(1)), queue: DispatchQueue.main) { [weak self] curTime in
-            if !__CurVC().isKind(of: DCVideoVC.self) {
-                self!.playerState = .paused
+            if !__CurVC().isKind(of: DCVideoVC.self) {//如果不在播放界面就暂停
+                self!.videoPause(true)
                 return
             }
             self!.isShowBuffV = false
@@ -192,9 +192,9 @@ class DCPlayerV: UIView {
         }
     }
     //MARK:-数据
-    func loadStart(haq: DCHaqi) {
-        myHaq = haq
-        nameL.text = myHaq.name
+    func loadStart(_ videoStr: String) {
+        videoUrl = videoStr
+        nameL.text = "轻量视频播放控件"
         playerState = .startToPlay
     }
     //MARK:-UI
@@ -235,6 +235,7 @@ class DCPlayerV: UIView {
             playCenterBtn.animatDisaper()
         }
         lowControlV.animatDisaper()
+        isHiddenStatusBar = isFullScreen
     }
     func controlVShow() {//显示控制界面
         nameL.alpha = 1
@@ -243,6 +244,7 @@ class DCPlayerV: UIView {
             playCenterBtn.animatShow()
         }
         lowControlV.animatShow()
+        isHiddenStatusBar = false
     }
     func showControlVAfter(_ time: Double) {//显示控制界面 并自动消失
         if videoItem != nil {
@@ -257,18 +259,12 @@ class DCPlayerV: UIView {
         }
     }
     //MARK:-变量
-    fileprivate var _playerState = DCPlayerState.notSetURL
-    var playerState: DCPlayerState {//播放控件所处状态
-        get {
-            return _playerState
-        }
-        set {
-            _playerState = newValue
-            switch newValue {
+    var playerState = DCPlayerState.notSetURL {//播放控件所处状态
+        didSet {
+            switch playerState {
             case .notSetURL:
                 hudL.animatDisaper()
             case .readyToPlay://系统加载完开始一段视频 准备好了播放
-                loadingV.disapear()
                 totalTime = CMTimeGetSeconds(videoItem.duration)
                 
                 startOrBtnDo(playCenterBtn)
@@ -292,12 +288,12 @@ class DCPlayerV: UIView {
             case .playing:
                 dcPlayer!.play()
                 rePlayBtn.alpha = 0
-                playCenterBtn.setImage(#imageLiteral(resourceName: "BMPlayer_pause"), for: .normal)
+                playCenterBtn.setImage(#imageLiteral(resourceName: "Player_pause"), for: .normal)
                 bigImgV.animatDisaper()
                 isHandOn = false
             case .paused:
                 isShowBuffV = false
-                playCenterBtn.setImage(#imageLiteral(resourceName: "BMPlayer_play"), for: .normal)
+                playCenterBtn.setImage(#imageLiteral(resourceName: "Player_play"), for: .normal)
                 dcPlayer!.pause()
             case .buffering:
                 isShowBuffV = true
@@ -314,19 +310,28 @@ class DCPlayerV: UIView {
         }
     }
     
-    fileprivate var _totalTime: Double!
-    var totalTime: Double! {//总时间
-        get {
-            if _totalTime == nil {
-                return 9999
+    var isFullScreen: Bool = false {//是否全屏
+        didSet {
+            fullBtn.setImage(isFullScreen ?  #imageLiteral(resourceName: "Player_portialscreen") :  #imageLiteral(resourceName: "Player_fullscreen"), for: .normal)
+            __CurVC().navigationController?.interactivePopGestureRecognizer?.isEnabled = !isFullScreen
+            DispatchQueue.main.async {
+                self.frame = self.isFullScreen ? CGRect.init(x: 0, y: 0, width: __MainScreenHeight, height: __MainScreenWidth) : CGRect.init(x: 0, y: UIDevice.current.isX() ? 42 : 0, width: __MainScreenWidth, height: __MainScreenWidth/16*9)
+                self.dcVideoLayer.frame = self.bounds
             }
-            return _totalTime
         }
-        set {
-            if _totalTime == nil && newValue != nil {
-                rightTimeL.text = newValue.timeStr
+    }
+    
+    var isHiddenStatusBar = false {//是否隐藏状态栏
+        didSet {
+            UIView.animate(withDuration: 0.3) {
+                __CurVC().setNeedsStatusBarAppearanceUpdate()
             }
-            _totalTime = newValue
+        }
+    }
+    
+    var totalTime: Double = 999 {//总时间
+        didSet {
+            rightTimeL.text = totalTime.timeStr
         }
     }
     var loadDataProgress: Double {//视频数据加载进度
@@ -335,14 +340,9 @@ class DCPlayerV: UIView {
         return CMTimeGetSeconds(loadTime)/totalTime
     }
     
-    fileprivate var _isShowBuffV = false
-    var isShowBuffV: Bool {//是否显示视频加载中界面
-        get {
-            return _isShowBuffV
-        }
-        set {
-            _isShowBuffV = newValue
-            if newValue {
+    var isShowBuffV: Bool = false {//是否显示视频加载中界面
+        didSet {
+            if isShowBuffV {
                 playCenterBtn.alpha = 0
                 bufferingV.animatShow()
             }else{
@@ -351,37 +351,15 @@ class DCPlayerV: UIView {
         }
     }
 
-    fileprivate var _sliderChangeTime: Double = 0
-    var sliderChangeTime: Double {
-        get {
-            return _sliderChangeTime
-        }
-        set {
-            _sliderChangeTime = newValue
-            leftTimeL.text = newValue.timeStr
+    var sliderChangeTime: Double = 0 {
+        didSet {
+            leftTimeL.text = sliderChangeTime.timeStr
             videoPause(true)
             rePlayBtn.alpha = 0
         }
     }
     
-    fileprivate var _isFullScreen = false
-    var isFullScreen: Bool {//是否全屏
-        get {
-            return _isFullScreen
-        }
-        set {
-            _isFullScreen = newValue
-            fullBtn.setImage(newValue ?  #imageLiteral(resourceName: "BMPlayer_portialscreen") :  #imageLiteral(resourceName: "BMPlayer_fullscreen"), for: .normal)
-            __CurVC().navigationController?.interactivePopGestureRecognizer?.isEnabled = !newValue
-            UIApplication.shared.setStatusBarHidden(newValue, with: UIStatusBarAnimation.slide)
-            DispatchQueue.main.async {
-                self.frame = newValue ? CGRect.init(x: 0, y: 0, width: __MainScreenHeight, height: __MainScreenWidth) : CGRect.init(x: 0, y: UIDevice.current.isX() ? 42 : 0, width: __MainScreenWidth, height: __MainScreenWidth/16*9)
-                self.dcVideoLayer.frame = self.bounds
-            }
-        }
-    }
-
-    var myHaq = DCHaqi()
+    var videoUrl = ""
     var playingTimeBlock: ((Double, Double)->())?//播放中每秒调用一次
     var playFineBlock: (()->())?//播完
     
@@ -409,7 +387,7 @@ class DCPlayerV: UIView {
     var dcVideoLayer: AVPlayerLayer!
     var timeObserver: Any!//播放中时间监听者
     let rates = ["0.8", "1.0", "1.5", "2.0", "2.5", "3.0"]
-    var brightV = ZFBrightnessView.shared()//亮度调节界面
+    let brightV = DCBrightChangeV.sharedV//亮度调节界面
     var volumeSlider: UISlider!//音量调节界面
 
     var isHandOn = true//是否手动操作
@@ -426,4 +404,90 @@ class DCPlayerV: UIView {
     case paused             //暂停中
     case playedToTheEnd // 播放结束
     case error                  // 出现错误
+}
+
+//MARK:-一些工具
+func __CurVC() -> UIViewController! {//获取当前所在VC 有UITabBarController和UINavigationController
+    let appDele = UIApplication.shared.delegate as! AppDelegate
+    let window = appDele.window
+    
+    if let rootVC = window?.rootViewController {
+        if rootVC.isKind(of: UITabBarController.self) {
+            let curSelectedNavVC = (rootVC as! UITabBarController).selectedViewController as! UINavigationController
+            return curSelectedNavVC.viewControllers.last
+        }
+        if rootVC.isKind(of: UINavigationController.self) {
+            return (rootVC as! UINavigationController).viewControllers.last
+        }
+    }
+    return UIViewController()
+}
+
+let __keyWindow = UIApplication.shared.delegate!.window!!
+let __MainScreenBounds = UIScreen.main.bounds
+let __MainScreenSize   = __MainScreenBounds.size
+let __MainScreenWidth  = __MainScreenSize.width
+let __MainScreenHeight = __MainScreenSize.height
+
+extension UIDevice {
+    public func isX() -> Bool {
+        if UIScreen.main.bounds.height == 812 {
+            return true
+        }
+        return false
+    }
+}
+
+extension UIView {
+    
+    func decotate(textC: UIColor?, cornerR: CGFloat?, borderC: UIColor?, borderW: CGFloat?) {
+        self.layer.masksToBounds = true
+        if textC != nil {
+            if self.isKind(of: UIButton.self) {
+                (self as! UIButton).setTitleColor(textC, for: .normal)
+            }
+        }
+        if cornerR != nil {
+            self.layer.cornerRadius = cornerR!
+        }
+        if borderC != nil {
+            self.layer.borderColor = borderC!.cgColor
+        }
+        if borderW != nil {
+            self.layer.borderWidth = borderW!
+        }
+    }
+    
+    func isShowingView(isShow: Bool) {
+        if isShow {
+            self.animatShow()
+        }else{
+            self.animatDisaper()
+        }
+    }
+    
+    func animatShow() {
+        UIView.animate(withDuration: 0.3) {
+            self.alpha = 1
+        }
+    }
+    
+    func animatDisaper() {
+        UIView.animate(withDuration: 0.2) {
+            self.alpha = 0
+        }
+    }
+    func animatDisaper(_ time: Double) {
+        UIView.animate(withDuration: time) {
+            self.alpha = 0
+        }
+    }
+}
+
+extension Double {
+    var timeStr: String {
+        let miniter = Int(self/60)
+        let second = Int(self.truncatingRemainder(dividingBy: 60))
+        return "\(miniter < 10 ? "0" : "")\(miniter):\(second < 10 ? "0" : "")\(second)"
+    }
 }

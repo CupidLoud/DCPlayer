@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DCVideoVC: UIViewController {
+class DCVideoVC: DCVC {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "\(type(of: self))", bundle: nil)
@@ -32,10 +32,30 @@ class DCVideoVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     deinit {
-        topMesV.showMes("\(type(of: self)) \(String(describing: navigationItem.title))")
+        print("\(type(of: self))控制器释放 \(String(describing: navigationItem.title))")
     }
     //MARK:-核心
-    //MARK:-控制
+    override var shouldAutorotate : Bool {
+        return true
+    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .allButUpsideDown
+    }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    override var prefersStatusBarHidden: Bool {//控制状态栏是否隐藏
+        if videoV == nil {
+            return false
+        }
+        return videoV.isHiddenStatusBar
+    }
     @objc func orientationDidChange() {//方向改变
         if videoV == nil {
             return
@@ -48,12 +68,13 @@ class DCVideoVC: UIViewController {
             videoV.isFullScreen = false
         }
     }
+    //MARK:-控制
+
     //MARK:-数据
     func loadStart() {
         if videoV == nil {
-            videoV = Bundle.main.loadNibNamed("DCPlayerV", owner: self, options: nil)?.last as! DCPlayerV
+            videoV = Bundle.main.loadNibNamed("DCPlayerV", owner: self, options: nil)?.last as! DCPlayerV//初始化播放控件
             view.addSubview(videoV)
-            
             videoV.playingTimeBlock = { [weak self] (currentTime, totalTime) in
                 if self == nil {
                     return
@@ -66,15 +87,14 @@ class DCVideoVC: UIViewController {
             }
             
         }
-        videoV.loadStart(haq: myHaq)
-        videoV.isFullScreen = false
+        videoV.loadStart(videoUrl)
+        videoV.isFullScreen = false//默认不全屏
     }
     //MARK:-UI
     func setUI() {
-        
     }
     
-    var myHaq = DCHaqi()
+    var videoUrl = ""
     weak var videoV: DCPlayerV!
 
 }

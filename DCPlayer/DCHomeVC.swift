@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DCHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DCHomeVC: DCVC, UITableViewDelegate, UITableViewDataSource {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "\(type(of: self))", bundle: nil)
@@ -20,40 +20,29 @@ class DCHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         setUI()
-        loadStart()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     deinit {
-//        topMesV.showMes("\(type(of: self)) \(String(describing: navigationItem.title))")
+        print("\(type(of: self))控制器释放 \(String(describing: navigationItem.title))")
     }
     //MARK:-核心
     //MARK:-控制
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let haq = myHaq.haqs[indexPath.row]
         let vc = DCVideoVC()
-        vc.myHaq = haq
+        vc.videoUrl = videoUrl
         self.navigationController?.pushViewController(vc, animated: true)
     }
     //MARK:-数据
-    func loadStart() {
-
-        let netHaq = DCHaqi()
-        netHaq.videoUrl = "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4"
-        netHaq.name = "网络视频"
-        myHaq.haqs += [netHaq]
-        
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myHaq.haqs.count
+        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let haq = myHaq.haqs[indexPath.row]
         let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "cell") as! UITableViewCell
-        cell.textLabel?.text = haq.name
+        cell.textLabel?.text = videoUrl
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,6 +53,7 @@ class DCHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.title = "🌾"
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-    var myHaq = DCHaqi()
+    
     @IBOutlet weak var tv: UITableView!
+    let videoUrl = "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4"
 }
