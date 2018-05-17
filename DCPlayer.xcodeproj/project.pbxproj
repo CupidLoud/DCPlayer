@@ -10,31 +10,15 @@
 		0907CE3E20AAB3DE009C2AF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907CE3D20AAB3DE009C2AF6 /* AppDelegate.swift */; };
 		0907CE4520AAB3DE009C2AF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */; };
 		0907CE4820AAB3DE009C2AF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE4620AAB3DE009C2AF6 /* LaunchScreen.storyboard */; };
-		0907CE5120AAB7B5009C2AF6 /* DCPlayerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907CE4F20AAB7B5009C2AF6 /* DCPlayerV.swift */; };
 		0907CE5220AAB7B5009C2AF6 /* DCPlayerV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */; };
 		0907CE5D20AAB852009C2AF6 /* DCVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */; };
-		0907CE5E20AAB852009C2AF6 /* DCVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE5C20AAB852009C2AF6 /* DCVideoVC.xib */; };
-		090B9A2220AC074000FF0F3E /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2120AC074000FF0F3E /* back.png */; };
-		090B9A3220AC07B400FF0F3E /* icon_volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2320AC07B300FF0F3E /* icon_volume.png */; };
-		090B9A3320AC07B400FF0F3E /* Player_replay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2420AC07B300FF0F3E /* Player_replay@2x.png */; };
-		090B9A3420AC07B400FF0F3E /* Player_next.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2520AC07B300FF0F3E /* Player_next.jpg */; };
-		090B9A3520AC07B400FF0F3E /* Player_fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2620AC07B300FF0F3E /* Player_fullscreen@3x.png */; };
-		090B9A3620AC07B400FF0F3E /* icon_schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2720AC07B300FF0F3E /* icon_schedule.png */; };
-		090B9A3720AC07B400FF0F3E /* Player_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2820AC07B300FF0F3E /* Player_play.png */; };
-		090B9A3820AC07B400FF0F3E /* Player_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2920AC07B300FF0F3E /* Player_pause.png */; };
-		090B9A3920AC07B400FF0F3E /* icon_brightness.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2A20AC07B300FF0F3E /* icon_brightness.png */; };
-		090B9A3A20AC07B400FF0F3E /* Player_fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2B20AC07B300FF0F3E /* Player_fullscreen@2x.png */; };
-		090B9A3B20AC07B400FF0F3E /* Player_brightness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2C20AC07B400FF0F3E /* Player_brightness@2x.png */; };
-		090B9A3C20AC07B400FF0F3E /* Player_slider_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2D20AC07B400FF0F3E /* Player_slider_thumb@2x.png */; };
-		090B9A3D20AC07B400FF0F3E /* Player_replay@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A2E20AC07B400FF0F3E /* Player_replay@3x.png */; };
-		090B9A3F20AC07B400FF0F3E /* Player_slider_thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A3020AC07B400FF0F3E /* Player_slider_thumb@3x.png */; };
-		090B9A4020AC07B400FF0F3E /* Player_portialscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A3120AC07B400FF0F3E /* Player_portialscreen@3x.png */; };
-		090B9A4220AC083200FF0F3E /* Player_portialscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B9A4120AC083200FF0F3E /* Player_portialscreen@2x.png */; };
 		090B9A4420AC0EC200FF0F3E /* DCNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */; };
 		090B9A4620AC0EDD00FF0F3E /* DCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B9A4520AC0EDD00FF0F3E /* DCVC.swift */; };
 		0934BBE720AABC7D00674676 /* DCHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934BBE520AABC7D00674676 /* DCHomeVC.swift */; };
 		0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0934BBE620AABC7D00674676 /* DCHomeVC.xib */; };
 		0945BD9F20ABCE0A00FFC2A2 /* DCBrightChangeV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */; };
+		09638BA820AD554300D1C12C /* PlayerImgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09638BA720AD554300D1C12C /* PlayerImgs.xcassets */; };
+		09638BAD20AD790000D1C12C /* DCPlayerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09638BAC20AD790000D1C12C /* DCPlayerV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,31 +27,15 @@
 		0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0907CE4720AAB3DE009C2AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0907CE4920AAB3DE009C2AF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0907CE4F20AAB7B5009C2AF6 /* DCPlayerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlayerV.swift; sourceTree = "<group>"; };
 		0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPlayerV.xib; sourceTree = "<group>"; };
 		0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCVideoVC.swift; sourceTree = "<group>"; };
-		0907CE5C20AAB852009C2AF6 /* DCVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCVideoVC.xib; sourceTree = "<group>"; };
-		090B9A2120AC074000FF0F3E /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		090B9A2320AC07B300FF0F3E /* icon_volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_volume.png; sourceTree = "<group>"; };
-		090B9A2420AC07B300FF0F3E /* Player_replay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_replay@2x.png"; sourceTree = "<group>"; };
-		090B9A2520AC07B300FF0F3E /* Player_next.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Player_next.jpg; sourceTree = "<group>"; };
-		090B9A2620AC07B300FF0F3E /* Player_fullscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_fullscreen@3x.png"; sourceTree = "<group>"; };
-		090B9A2720AC07B300FF0F3E /* icon_schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_schedule.png; sourceTree = "<group>"; };
-		090B9A2820AC07B300FF0F3E /* Player_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_play.png; sourceTree = "<group>"; };
-		090B9A2920AC07B300FF0F3E /* Player_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_pause.png; sourceTree = "<group>"; };
-		090B9A2A20AC07B300FF0F3E /* icon_brightness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_brightness.png; sourceTree = "<group>"; };
-		090B9A2B20AC07B300FF0F3E /* Player_fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_fullscreen@2x.png"; sourceTree = "<group>"; };
-		090B9A2C20AC07B400FF0F3E /* Player_brightness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_brightness@2x.png"; sourceTree = "<group>"; };
-		090B9A2D20AC07B400FF0F3E /* Player_slider_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_slider_thumb@2x.png"; sourceTree = "<group>"; };
-		090B9A2E20AC07B400FF0F3E /* Player_replay@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_replay@3x.png"; sourceTree = "<group>"; };
-		090B9A3020AC07B400FF0F3E /* Player_slider_thumb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_slider_thumb@3x.png"; sourceTree = "<group>"; };
-		090B9A3120AC07B400FF0F3E /* Player_portialscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_portialscreen@3x.png"; sourceTree = "<group>"; };
-		090B9A4120AC083200FF0F3E /* Player_portialscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player_portialscreen@2x.png"; sourceTree = "<group>"; };
 		090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCNavVC.swift; sourceTree = "<group>"; };
 		090B9A4520AC0EDD00FF0F3E /* DCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCVC.swift; sourceTree = "<group>"; };
 		0934BBE520AABC7D00674676 /* DCHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCHomeVC.swift; sourceTree = "<group>"; };
 		0934BBE620AABC7D00674676 /* DCHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCHomeVC.xib; sourceTree = "<group>"; };
 		0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBrightChangeV.swift; sourceTree = "<group>"; };
+		09638BA720AD554300D1C12C /* PlayerImgs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlayerImgs.xcassets; sourceTree = "<group>"; };
+		09638BAC20AD790000D1C12C /* DCPlayerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlayerV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +52,15 @@
 		0907CE3120AAB3DE009C2AF6 = {
 			isa = PBXGroup;
 			children = (
+				0907CE3D20AAB3DE009C2AF6 /* AppDelegate.swift */,
+				0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */,
+				0907CE4620AAB3DE009C2AF6 /* LaunchScreen.storyboard */,
+				090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */,
+				090B9A4520AC0EDD00FF0F3E /* DCVC.swift */,
+				0934BBE520AABC7D00674676 /* DCHomeVC.swift */,
+				0934BBE620AABC7D00674676 /* DCHomeVC.xib */,
+				0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */,
+				0907CE4920AAB3DE009C2AF6 /* Info.plist */,
 				0907CE3C20AAB3DE009C2AF6 /* DCPlayer */,
 				0907CE3B20AAB3DE009C2AF6 /* Products */,
 			);
@@ -100,53 +77,12 @@
 		0907CE3C20AAB3DE009C2AF6 /* DCPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				0907CE3D20AAB3DE009C2AF6 /* AppDelegate.swift */,
-				0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */,
-				0907CE4620AAB3DE009C2AF6 /* LaunchScreen.storyboard */,
-				0907CE4920AAB3DE009C2AF6 /* Info.plist */,
-				090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */,
-				090B9A4520AC0EDD00FF0F3E /* DCVC.swift */,
-				0934BBE520AABC7D00674676 /* DCHomeVC.swift */,
-				0934BBE620AABC7D00674676 /* DCHomeVC.xib */,
-				0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */,
-				0907CE5C20AAB852009C2AF6 /* DCVideoVC.xib */,
-				090B9A4720AC168B00FF0F3E /* LightPlayer */,
-			);
-			path = DCPlayer;
-			sourceTree = "<group>";
-		};
-		090B9A2020AC072F00FF0F3E /* PlayerImgs */ = {
-			isa = PBXGroup;
-			children = (
-				090B9A2120AC074000FF0F3E /* back.png */,
-				090B9A2A20AC07B300FF0F3E /* icon_brightness.png */,
-				090B9A2720AC07B300FF0F3E /* icon_schedule.png */,
-				090B9A2320AC07B300FF0F3E /* icon_volume.png */,
-				090B9A2B20AC07B300FF0F3E /* Player_fullscreen@2x.png */,
-				090B9A2620AC07B300FF0F3E /* Player_fullscreen@3x.png */,
-				090B9A2520AC07B300FF0F3E /* Player_next.jpg */,
-				090B9A2920AC07B300FF0F3E /* Player_pause.png */,
-				090B9A2820AC07B300FF0F3E /* Player_play.png */,
-				090B9A4120AC083200FF0F3E /* Player_portialscreen@2x.png */,
-				090B9A3120AC07B400FF0F3E /* Player_portialscreen@3x.png */,
-				090B9A2420AC07B300FF0F3E /* Player_replay@2x.png */,
-				090B9A2E20AC07B400FF0F3E /* Player_replay@3x.png */,
-				090B9A2D20AC07B400FF0F3E /* Player_slider_thumb@2x.png */,
-				090B9A3020AC07B400FF0F3E /* Player_slider_thumb@3x.png */,
-				090B9A2C20AC07B400FF0F3E /* Player_brightness@2x.png */,
-			);
-			path = PlayerImgs;
-			sourceTree = "<group>";
-		};
-		090B9A4720AC168B00FF0F3E /* LightPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				0907CE4F20AAB7B5009C2AF6 /* DCPlayerV.swift */,
+				09638BAC20AD790000D1C12C /* DCPlayerV.swift */,
 				0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */,
 				0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */,
-				090B9A2020AC072F00FF0F3E /* PlayerImgs */,
+				09638BA720AD554300D1C12C /* PlayerImgs.xcassets */,
 			);
-			path = LightPlayer;
+			path = DCPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,26 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */,
-				0907CE5E20AAB852009C2AF6 /* DCVideoVC.xib in Resources */,
-				090B9A3C20AC07B400FF0F3E /* Player_slider_thumb@2x.png in Resources */,
-				090B9A3320AC07B400FF0F3E /* Player_replay@2x.png in Resources */,
-				090B9A3520AC07B400FF0F3E /* Player_fullscreen@3x.png in Resources */,
-				090B9A2220AC074000FF0F3E /* back.png in Resources */,
-				090B9A3920AC07B400FF0F3E /* icon_brightness.png in Resources */,
 				0907CE5220AAB7B5009C2AF6 /* DCPlayerV.xib in Resources */,
-				090B9A3820AC07B400FF0F3E /* Player_pause.png in Resources */,
-				090B9A3A20AC07B400FF0F3E /* Player_fullscreen@2x.png in Resources */,
-				090B9A3220AC07B400FF0F3E /* icon_volume.png in Resources */,
 				0907CE4820AAB3DE009C2AF6 /* LaunchScreen.storyboard in Resources */,
-				090B9A3620AC07B400FF0F3E /* icon_schedule.png in Resources */,
-				090B9A3D20AC07B400FF0F3E /* Player_replay@3x.png in Resources */,
-				090B9A3B20AC07B400FF0F3E /* Player_brightness@2x.png in Resources */,
 				0907CE4520AAB3DE009C2AF6 /* Assets.xcassets in Resources */,
-				090B9A4220AC083200FF0F3E /* Player_portialscreen@2x.png in Resources */,
-				090B9A3720AC07B400FF0F3E /* Player_play.png in Resources */,
-				090B9A3F20AC07B400FF0F3E /* Player_slider_thumb@3x.png in Resources */,
-				090B9A3420AC07B400FF0F3E /* Player_next.jpg in Resources */,
-				090B9A4020AC07B400FF0F3E /* Player_portialscreen@3x.png in Resources */,
+				09638BA820AD554300D1C12C /* PlayerImgs.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,13 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0907CE5120AAB7B5009C2AF6 /* DCPlayerV.swift in Sources */,
 				090B9A4420AC0EC200FF0F3E /* DCNavVC.swift in Sources */,
 				0934BBE720AABC7D00674676 /* DCHomeVC.swift in Sources */,
 				090B9A4620AC0EDD00FF0F3E /* DCVC.swift in Sources */,
 				0907CE5D20AAB852009C2AF6 /* DCVideoVC.swift in Sources */,
 				0907CE3E20AAB3DE009C2AF6 /* AppDelegate.swift in Sources */,
 				0945BD9F20ABCE0A00FFC2A2 /* DCBrightChangeV.swift in Sources */,
+				09638BAD20AD790000D1C12C /* DCPlayerV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +298,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3R22EYM38;
-				INFOPLIST_FILE = DCPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lq150924.DCPlayer;
@@ -397,7 +317,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3R22EYM38;
-				INFOPLIST_FILE = DCPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lq150924.DCPlayer;

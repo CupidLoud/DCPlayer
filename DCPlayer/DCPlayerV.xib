@@ -27,7 +27,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-Vh-2gA" userLabel="ViewC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guessPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xZ4-5W-1Sb">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xZ4-5W-1Sb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTe-7Z-BF9">
@@ -39,7 +39,7 @@
                                         <constraint firstAttribute="width" secondItem="A2A-Q2-REp" secondAttribute="height" multiplier="1:1" id="9ET-7C-2Ji"/>
                                         <constraint firstAttribute="width" constant="50" id="OOq-Mg-zDG"/>
                                     </constraints>
-                                    <state key="normal" image="back.png"/>
+                                    <state key="normal" image="back"/>
                                     <connections>
                                         <action selector="backBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="2wu-yh-rhe"/>
                                     </connections>
@@ -76,7 +76,7 @@
                                 <constraint firstAttribute="width" constant="25" id="AmO-vy-HPi"/>
                                 <constraint firstAttribute="width" secondItem="3KD-n7-Jhc" secondAttribute="height" multiplier="4:5" id="Kom-xA-4BG"/>
                             </constraints>
-                            <state key="normal" image="Player_play.png"/>
+                            <state key="normal" image="Player_play"/>
                             <connections>
                                 <action selector="startOrBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="NhH-MN-0oW"/>
                             </connections>
@@ -87,7 +87,7 @@
                                 <constraint firstAttribute="width" constant="30" id="jPr-dC-sE7"/>
                                 <constraint firstAttribute="width" secondItem="9sJ-f9-Qnl" secondAttribute="height" id="pZx-Lt-gYf"/>
                             </constraints>
-                            <state key="normal" image="Player_replay.png"/>
+                            <state key="normal" image="Player_replay"/>
                             <connections>
                                 <action selector="rePlayBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="aEk-6R-bht"/>
                             </connections>
@@ -144,7 +144,7 @@
                                         <constraint firstAttribute="width" secondItem="zOd-Je-PmB" secondAttribute="height" multiplier="15:22" id="Dke-MT-CdQ"/>
                                         <constraint firstAttribute="width" constant="20" id="Pe8-fV-oKb"/>
                                     </constraints>
-                                    <state key="normal" image="Player_fullscreen.png"/>
+                                    <state key="normal" image="Player_fullscreen"/>
                                     <connections>
                                         <action selector="fullBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="ChG-5P-1gR"/>
                                     </connections>
@@ -266,11 +266,10 @@
         </view>
     </objects>
     <resources>
-        <image name="Player_fullscreen.png" width="15" height="15"/>
-        <image name="Player_play.png" width="36" height="45"/>
-        <image name="Player_replay.png" width="30" height="30"/>
-        <image name="back.png" width="80" height="80"/>
-        <image name="guessPlaceholder" width="572" height="376"/>
+        <image name="Player_fullscreen" width="15" height="15"/>
+        <image name="Player_play" width="36" height="45"/>
+        <image name="Player_replay" width="30" height="30"/>
+        <image name="back" width="80" height="80"/>
         <image name="icon_brightness" width="64" height="115"/>
         <image name="icon_schedule" width="76" height="107"/>
         <image name="icon_volume" width="68" height="115"/>
