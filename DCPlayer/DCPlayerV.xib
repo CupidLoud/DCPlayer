@@ -39,7 +39,7 @@
                                         <constraint firstAttribute="width" secondItem="A2A-Q2-REp" secondAttribute="height" multiplier="1:1" id="9ET-7C-2Ji"/>
                                         <constraint firstAttribute="width" constant="50" id="OOq-Mg-zDG"/>
                                     </constraints>
-                                    <state key="normal" image="back"/>
+                                    <state key="normal" image="DCPlayer_back.png"/>
                                     <connections>
                                         <action selector="backBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="2wu-yh-rhe"/>
                                     </connections>
@@ -76,7 +76,7 @@
                                 <constraint firstAttribute="width" constant="25" id="AmO-vy-HPi"/>
                                 <constraint firstAttribute="width" secondItem="3KD-n7-Jhc" secondAttribute="height" multiplier="4:5" id="Kom-xA-4BG"/>
                             </constraints>
-                            <state key="normal" image="Player_play"/>
+                            <state key="normal" image="DCPlayer_play.png"/>
                             <connections>
                                 <action selector="startOrBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="NhH-MN-0oW"/>
                             </connections>
@@ -87,7 +87,7 @@
                                 <constraint firstAttribute="width" constant="30" id="jPr-dC-sE7"/>
                                 <constraint firstAttribute="width" secondItem="9sJ-f9-Qnl" secondAttribute="height" id="pZx-Lt-gYf"/>
                             </constraints>
-                            <state key="normal" image="Player_replay"/>
+                            <state key="normal" image="DCPlayer_replay.png"/>
                             <connections>
                                 <action selector="rePlayBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="aEk-6R-bht"/>
                             </connections>
@@ -139,12 +139,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOd-Je-PmB">
-                                    <rect key="frame" x="335" y="3" width="20" height="29"/>
+                                    <rect key="frame" x="325" y="-4.5" width="30" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="zOd-Je-PmB" secondAttribute="height" multiplier="15:22" id="Dke-MT-CdQ"/>
-                                        <constraint firstAttribute="width" constant="20" id="Pe8-fV-oKb"/>
+                                        <constraint firstAttribute="width" constant="30" id="Pe8-fV-oKb"/>
                                     </constraints>
-                                    <state key="normal" image="Player_fullscreen"/>
+                                    <state key="normal" image="DCPlayer_fullscreen.png"/>
                                     <connections>
                                         <action selector="fullBtnDo:" destination="iN0-l3-epB" eventType="touchUpInside" id="ChG-5P-1gR"/>
                                     </connections>
@@ -159,7 +159,7 @@
                                 <constraint firstItem="8WD-qi-kk0" firstAttribute="leading" secondItem="fMQ-af-NbU" secondAttribute="trailing" constant="10" id="ZI2-Tf-pWF"/>
                                 <constraint firstItem="sfo-Nm-z7C" firstAttribute="centerX" secondItem="8WD-qi-kk0" secondAttribute="centerX" id="aMY-pX-zci"/>
                                 <constraint firstItem="8WD-qi-kk0" firstAttribute="centerY" secondItem="fMQ-af-NbU" secondAttribute="centerY" id="cXf-ZR-fzW"/>
-                                <constraint firstItem="zOd-Je-PmB" firstAttribute="leading" secondItem="ZKH-0b-eG3" secondAttribute="trailing" constant="10" id="fPj-lD-Cet"/>
+                                <constraint firstItem="zOd-Je-PmB" firstAttribute="leading" secondItem="ZKH-0b-eG3" secondAttribute="trailing" id="fPj-lD-Cet"/>
                                 <constraint firstItem="fMQ-af-NbU" firstAttribute="centerY" secondItem="lSk-gU-lRR" secondAttribute="centerY" constant="-3" id="mwf-x5-ZSt"/>
                                 <constraint firstItem="sfo-Nm-z7C" firstAttribute="width" secondItem="8WD-qi-kk0" secondAttribute="width" id="nfl-Fl-wAQ"/>
                                 <constraint firstItem="ZKH-0b-eG3" firstAttribute="centerY" secondItem="fMQ-af-NbU" secondAttribute="centerY" id="qex-JX-CZH"/>
@@ -170,21 +170,21 @@
                         <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5EX-ve-EIi">
                             <rect key="frame" x="0.0" y="57.5" width="375" height="155.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_volume" translatesAutoresizingMaskIntoConstraints="NO" id="Dck-0Q-7WP" userLabel="2">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DCVolume.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dck-0Q-7WP" userLabel="2">
                                     <rect key="frame" x="311" y="39.5" width="44" height="75"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="eLE-NT-i53"/>
                                         <constraint firstAttribute="width" secondItem="Dck-0Q-7WP" secondAttribute="height" multiplier="68:115" id="hrc-5X-YA1"/>
                                     </constraints>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_schedule" translatesAutoresizingMaskIntoConstraints="NO" id="jl5-JI-iSg" userLabel="3">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DCSchedule.png" translatesAutoresizingMaskIntoConstraints="NO" id="jl5-JI-iSg" userLabel="3">
                                     <rect key="frame" x="165.5" y="83.5" width="44" height="62"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="HKv-G1-t08"/>
                                         <constraint firstAttribute="width" secondItem="jl5-JI-iSg" secondAttribute="height" multiplier="76:107" id="jLf-pL-EB5"/>
                                     </constraints>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_brightness" translatesAutoresizingMaskIntoConstraints="NO" id="Li7-Ou-Ppi" userLabel="1">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DCBrightness.png" translatesAutoresizingMaskIntoConstraints="NO" id="Li7-Ou-Ppi" userLabel="1">
                                     <rect key="frame" x="20" y="37.5" width="44" height="79"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="7EW-oy-vkq"/>
@@ -246,9 +246,11 @@
                 <outlet property="backBtn" destination="A2A-Q2-REp" id="Enl-D2-Rph"/>
                 <outlet property="bigImgV" destination="xZ4-5W-1Sb" id="Lbm-00-VHG"/>
                 <outlet property="bufferingV" destination="Bg3-WF-1q7" id="sch-io-E4c"/>
+                <outlet property="centerGesImgV" destination="jl5-JI-iSg" id="ESQ-mF-Y2j"/>
                 <outlet property="controlV" destination="s1e-Vh-2gA" id="FsE-Ii-2RG"/>
                 <outlet property="fullBtn" destination="zOd-Je-PmB" id="50J-oh-f2l"/>
                 <outlet property="hudL" destination="UQZ-uK-8x1" id="iEe-on-emM"/>
+                <outlet property="leftGesImgV" destination="Li7-Ou-Ppi" id="FDH-sV-h1J"/>
                 <outlet property="leftTimeL" destination="fMQ-af-NbU" id="Q5m-iM-27J"/>
                 <outlet property="lowControlV" destination="lSk-gU-lRR" id="79a-Of-SMN"/>
                 <outlet property="nameL" destination="iM8-cA-hZS" id="C0y-vA-HvC"/>
@@ -257,6 +259,7 @@
                 <outlet property="progressV" destination="sfo-Nm-z7C" id="rLk-QF-GkR"/>
                 <outlet property="rateBtn" destination="l6e-IO-Kll" id="dkc-jx-xY7"/>
                 <outlet property="rePlayBtn" destination="9sJ-f9-Qnl" id="e4V-96-wcD"/>
+                <outlet property="rightGesImgV" destination="Dck-0Q-7WP" id="dbG-7H-8nk"/>
                 <outlet property="rightTimeL" destination="ZKH-0b-eG3" id="wui-gX-RO2"/>
                 <outlet property="sliderV" destination="8WD-qi-kk0" id="ZUt-5G-79T"/>
                 <outlet property="topControlV" destination="OTe-7Z-BF9" id="xJl-8V-O3J"/>
@@ -266,12 +269,12 @@
         </view>
     </objects>
     <resources>
-        <image name="Player_fullscreen" width="15" height="15"/>
-        <image name="Player_play" width="36" height="45"/>
-        <image name="Player_replay" width="30" height="30"/>
-        <image name="back" width="80" height="80"/>
-        <image name="icon_brightness" width="64" height="115"/>
-        <image name="icon_schedule" width="76" height="107"/>
-        <image name="icon_volume" width="68" height="115"/>
+        <image name="DCBrightness.png" width="64" height="115"/>
+        <image name="DCPlayer_back.png" width="80" height="80"/>
+        <image name="DCPlayer_fullscreen.png" width="15" height="15"/>
+        <image name="DCPlayer_play.png" width="36" height="45"/>
+        <image name="DCPlayer_replay.png" width="30" height="30"/>
+        <image name="DCSchedule.png" width="76" height="107"/>
+        <image name="DCVolume.png" width="68" height="115"/>
     </resources>
 </document>

@@ -25,7 +25,7 @@ class DCVideoVC: DCVC {
         NotificationCenter.default.removeObserver(self)
     }
     deinit {
-        print("\(type(of: self))控制器释放 \(String(describing: navigationItem.title))")
+//        print("\(type(of: self))控制器释放 \(String(describing: navigationItem.title))")
     }
     //MARK:-核心
     override var shouldAutorotate : Bool {
@@ -68,7 +68,7 @@ class DCVideoVC: DCVC {
             
             //简单初始化
 //            videoV = DCPlayerV.setPlayerWith(URL.init(string: "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4")!, normalFrame: nil, isPlayNow: true)
-            videoV = DCPlayerV.setPlayerWith(URL.init(string: "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4")!, normalFrame: CGRect.init(x: 10, y: 200, width: 300, height: 500), isPlayNow: true)
+            videoV = DCPlayerV.setPlayerWith(URL.init(string: "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4")!, normalFrame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width/16*9), isPlayNow: true)
             //并单独设置Block操作
             videoV.playingBlock = { [weak self] (currentTime, totalTime) in
                 print("currentTime: \(currentTime), totalTime: \(totalTime)")
@@ -86,7 +86,7 @@ class DCVideoVC: DCVC {
             view.addSubview(videoV)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10.5) {//10秒后测试调用更换视频URL
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.5) {//10秒后测试调用更换视频URL
             self.videoV.changeVideo(URL.init(string: "http://chuangqiyun.oss-cn-shenzhen.aliyuncs.com/2018-05-11/87C4DMG4rB.mp4")!)
         }
     }

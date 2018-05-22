@@ -24,7 +24,7 @@ class DCBrightChangeV: UIView {
         self.addSubview(toolbar)
         
         self.backImage = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 79, height: 76))
-        self.backImage.image = UIImage.init(named: "Player_brightness")
+        self.backImage.image = UIImage.init(named: "DCPlayer_brightness".BundleImgStr)
         self.backImage.center = self.center
         self.addSubview(backImage)
         
@@ -101,9 +101,7 @@ class DCBrightChangeV: UIView {
     func disapperV() {
         self.animatDisaper(0.8)
     }
-    
-    static let sharedV = DCBrightChangeV()
-    
+        
     var backImage: UIImageView!
     var title: UILabel!
     var longView: UIView!

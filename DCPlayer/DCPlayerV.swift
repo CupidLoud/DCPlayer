@@ -23,6 +23,7 @@ open class DCPlayerV: UIView {
     deinit {
         print("播放控件已释放 \(type(of: self))")
         releasePlayer()
+        brightV.removeFromSuperview()
     }
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,7 @@ open class DCPlayerV: UIView {
     open override func willMove(toWindow newWindow: UIWindow?) {
         if newWindow == nil {
             self.videoPause(true)
+            cancelWillDisaperControlV()
         }
     }
     
@@ -39,10 +41,10 @@ open class DCPlayerV: UIView {
         if videoItem != nil {
             playerState = .notSetURL
             NotificationCenter.default.removeObserver(self)
-            dcPlayer!.currentItem?.removeObserver(self, forKeyPath: "status")
-            dcPlayer!.currentItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
-            dcPlayer!.currentItem?.removeObserver(self, forKeyPath: "playbackBufferEmpty")
-            dcPlayer!.currentItem?.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
+            videoItem.removeObserver(self, forKeyPath: "status")
+            videoItem.removeObserver(self, forKeyPath: "loadedTimeRanges")
+            videoItem.removeObserver(self, forKeyPath: "playbackBufferEmpty")
+            videoItem.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
             dcPlayer!.removeTimeObserver(timeObserver)
             cancelWillDisaperControlV()
             videoItem = nil
@@ -112,13 +114,13 @@ open class DCPlayerV: UIView {
             if newValue == .playing {//播放视频
                 dcPlayer!.play()
                 rePlayBtn.alpha = 0
-                playCenterBtn.setImage(#imageLiteral(resourceName: "Player_pause"), for: .normal)
+                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_pause".BundleImgStr), for: .normal)
                 bigImgV.animatDisaper()
                 isHandOn = false
             }
             if newValue == .paused {//暂停视频
                 isShowBuffV = false
-                playCenterBtn.setImage(#imageLiteral(resourceName: "Player_play"), for: .normal)
+                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
                 dcPlayer!.pause()
             }
             if newValue == .playedToTheEnd {
@@ -326,7 +328,14 @@ open class DCPlayerV: UIView {
     }
     //MARK:-UI
     public func setUI() {//初始化界面
-        sliderV.setThumbImage(#imageLiteral(resourceName: "Player_slider_thumb"), for: UIControlState())
+        leftGesImgV.image = UIImage.init(named: "DCBrightness".BundleImgStr)
+        centerGesImgV.image = UIImage.init(named: "DCSchedule".BundleImgStr)
+        rightGesImgV.image = UIImage.init(named: "DCVolume".BundleImgStr)
+        backBtn.setImage(UIImage.init(named: "DCPlayer_back".BundleImgStr), for: .normal)
+        playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
+        fullBtn.setImage(UIImage.init(named: "DCPlayer_fullscreen".BundleImgStr), for: .normal)
+
+        sliderV.setThumbImage(UIImage.init(named: "DCPlayer_slider_thumb".BundleImgStr), for: UIControlState())
         lowControlV.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         progressV.progressTintColor = UIColor.white.withAlphaComponent(0.6)
         progressV.trackTintColor = UIColor.white.withAlphaComponent(0.3)
@@ -398,7 +407,7 @@ open class DCPlayerV: UIView {
     //MARK:-变量
     public var isFullScreen: Bool = false {//是否全屏
         didSet {
-            fullBtn.setImage(isFullScreen ?  #imageLiteral(resourceName: "Player_portialscreen") :  #imageLiteral(resourceName: "Player_fullscreen"), for: .normal)
+            fullBtn.setImage(isFullScreen ?  UIImage.init(named: "DCPlayer_portialscreen.png".BundleImgStr) :  UIImage.init(named: "DCPlayer_fullscreen.png".BundleImgStr), for: .normal)
             __CurVC().navigationController?.interactivePopGestureRecognizer?.isEnabled = !isFullScreen
             DispatchQueue.main.async {
                 self.frame = self.isFullScreen ? self.fullScreenFrame : self.normalFrame
@@ -463,13 +472,16 @@ open class DCPlayerV: UIView {
     @IBOutlet public weak var rightTimeL: UILabel!//总时间
     @IBOutlet public weak var fullBtn: UIButton!
     @IBOutlet public weak var videoGesImaV: UIView!
-    
+    @IBOutlet public weak var leftGesImgV: UIImageView!//视频图片
+    @IBOutlet public weak var centerGesImgV: UIImageView!//视频图片
+    @IBOutlet public weak var rightGesImgV: UIImageView!//视频图片
+
     public var videoItem: AVPlayerItem!
     public var dcPlayer: AVPlayer!
     public var dcVideoLayer: AVPlayerLayer!
     var timeObserver: Any!//播放中时间监听者
     let rates = ["0.8", "1.0", "1.5", "2.0", "2.5", "3.0"]
-    let brightV = DCBrightChangeV.sharedV//亮度调节界面
+    let brightV = DCBrightChangeV()//亮度调节界面
     var volumeSlider: UISlider!//音量调节界面
     
     var isPanVertical = false//是否水平拖动手势
@@ -512,13 +524,6 @@ let _ScreenW  = _ScreenSize.width
 let _ScreenH = _ScreenSize.height
 
 extension UIView {
-    func isShowingView(isShow: Bool) {
-        if isShow {
-            self.animatShow()
-        }else{
-            self.animatDisaper()
-        }
-    }
     
     func animatShow() {
         UIView.animate(withDuration: 0.3) {
@@ -543,5 +548,11 @@ extension Double {
         let miniter = Int(self/60)
         let second = Int(self.truncatingRemainder(dividingBy: 60))
         return "\(miniter < 10 ? "0" : "")\(miniter):\(second < 10 ? "0" : "")\(second)"
+    }
+}
+
+extension String {
+    var BundleImgStr: String {
+        return "PlayerImgs.bundle/\(self)"
     }
 }
