@@ -24,7 +24,7 @@ class DCBrightChangeV: UIView {
         self.addSubview(toolbar)
         
         self.backImage = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 79, height: 76))
-        self.backImage.image = UIImage.init(named: "DCPlayer_brightness".BundleImgStr)
+        self.backImage.image = "DCPlayer_brightness".img
         self.backImage.center = self.center
         self.addSubview(backImage)
         

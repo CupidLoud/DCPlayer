@@ -10,15 +10,15 @@
 		0907CE3E20AAB3DE009C2AF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907CE3D20AAB3DE009C2AF6 /* AppDelegate.swift */; };
 		0907CE4520AAB3DE009C2AF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */; };
 		0907CE4820AAB3DE009C2AF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE4620AAB3DE009C2AF6 /* LaunchScreen.storyboard */; };
-		0907CE5220AAB7B5009C2AF6 /* DCPlayerV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */; };
 		0907CE5D20AAB852009C2AF6 /* DCVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */; };
 		090B9A4420AC0EC200FF0F3E /* DCNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */; };
 		090B9A4620AC0EDD00FF0F3E /* DCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B9A4520AC0EDD00FF0F3E /* DCVC.swift */; };
 		0934BBE720AABC7D00674676 /* DCHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934BBE520AABC7D00674676 /* DCHomeVC.swift */; };
 		0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0934BBE620AABC7D00674676 /* DCHomeVC.xib */; };
-		0945BD9F20ABCE0A00FFC2A2 /* DCBrightChangeV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */; };
-		09638BAD20AD790000D1C12C /* DCPlayerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09638BAC20AD790000D1C12C /* DCPlayerV.swift */; };
-		09D91C1220B3B42D005A5EDE /* PlayerImgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */; };
+		09D91C1820B3BD36005A5EDE /* DCBrightChangeV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D91C1420B3BD36005A5EDE /* DCBrightChangeV.swift */; };
+		09D91C1920B3BD36005A5EDE /* DCPlayerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D91C1520B3BD36005A5EDE /* DCPlayerV.swift */; };
+		09D91C1A20B3BD36005A5EDE /* DCPlayerV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D91C1620B3BD36005A5EDE /* DCPlayerV.xib */; };
+		09D91C1B20B3BD36005A5EDE /* PlayerImgs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09D91C1720B3BD36005A5EDE /* PlayerImgs.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,15 +27,15 @@
 		0907CE4420AAB3DE009C2AF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0907CE4720AAB3DE009C2AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0907CE4920AAB3DE009C2AF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPlayerV.xib; sourceTree = "<group>"; };
 		0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCVideoVC.swift; sourceTree = "<group>"; };
 		090B9A4320AC0EC200FF0F3E /* DCNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCNavVC.swift; sourceTree = "<group>"; };
 		090B9A4520AC0EDD00FF0F3E /* DCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCVC.swift; sourceTree = "<group>"; };
 		0934BBE520AABC7D00674676 /* DCHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCHomeVC.swift; sourceTree = "<group>"; };
 		0934BBE620AABC7D00674676 /* DCHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCHomeVC.xib; sourceTree = "<group>"; };
-		0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBrightChangeV.swift; sourceTree = "<group>"; };
-		09638BAC20AD790000D1C12C /* DCPlayerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlayerV.swift; sourceTree = "<group>"; };
-		09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlayerImgs.xcassets; sourceTree = "<group>"; };
+		09D91C1420B3BD36005A5EDE /* DCBrightChangeV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBrightChangeV.swift; sourceTree = "<group>"; };
+		09D91C1520B3BD36005A5EDE /* DCPlayerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlayerV.swift; sourceTree = "<group>"; };
+		09D91C1620B3BD36005A5EDE /* DCPlayerV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPlayerV.xib; sourceTree = "<group>"; };
+		09D91C1720B3BD36005A5EDE /* PlayerImgs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PlayerImgs.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				0934BBE620AABC7D00674676 /* DCHomeVC.xib */,
 				0907CE5B20AAB852009C2AF6 /* DCVideoVC.swift */,
 				0907CE4920AAB3DE009C2AF6 /* Info.plist */,
-				0907CE3C20AAB3DE009C2AF6 /* DCPlayer */,
+				09D91C1320B3BD36005A5EDE /* DCPlayer */,
 				0907CE3B20AAB3DE009C2AF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,13 +74,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0907CE3C20AAB3DE009C2AF6 /* DCPlayer */ = {
+		09D91C1320B3BD36005A5EDE /* DCPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				09638BAC20AD790000D1C12C /* DCPlayerV.swift */,
-				0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */,
-				0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */,
-				09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */,
+				09D91C1420B3BD36005A5EDE /* DCBrightChangeV.swift */,
+				09D91C1520B3BD36005A5EDE /* DCPlayerV.swift */,
+				09D91C1620B3BD36005A5EDE /* DCPlayerV.xib */,
+				09D91C1720B3BD36005A5EDE /* PlayerImgs.bundle */,
 			);
 			path = DCPlayer;
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D91C1220B3B42D005A5EDE /* PlayerImgs.xcassets in Resources */,
+				09D91C1B20B3BD36005A5EDE /* PlayerImgs.bundle in Resources */,
+				09D91C1A20B3BD36005A5EDE /* DCPlayerV.xib in Resources */,
 				0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */,
-				0907CE5220AAB7B5009C2AF6 /* DCPlayerV.xib in Resources */,
 				0907CE4820AAB3DE009C2AF6 /* LaunchScreen.storyboard in Resources */,
 				0907CE4520AAB3DE009C2AF6 /* Assets.xcassets in Resources */,
 			);
@@ -165,8 +165,8 @@
 				090B9A4620AC0EDD00FF0F3E /* DCVC.swift in Sources */,
 				0907CE5D20AAB852009C2AF6 /* DCVideoVC.swift in Sources */,
 				0907CE3E20AAB3DE009C2AF6 /* AppDelegate.swift in Sources */,
-				0945BD9F20ABCE0A00FFC2A2 /* DCBrightChangeV.swift in Sources */,
-				09638BAD20AD790000D1C12C /* DCPlayerV.swift in Sources */,
+				09D91C1820B3BD36005A5EDE /* DCBrightChangeV.swift in Sources */,
+				09D91C1920B3BD36005A5EDE /* DCPlayerV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

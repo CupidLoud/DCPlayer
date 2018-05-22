@@ -31,7 +31,7 @@ open class DCPlayerV: UIView {
     }
     open override func willMove(toWindow newWindow: UIWindow?) {
         if newWindow == nil {
-            self.videoPause(true)
+            videoPause(true)
             cancelWillDisaperControlV()
         }
     }
@@ -49,7 +49,6 @@ open class DCPlayerV: UIView {
             cancelWillDisaperControlV()
             videoItem = nil
             dcPlayer = nil
-            totalTime = 999
         }
     }
     
@@ -79,19 +78,14 @@ open class DCPlayerV: UIView {
         }
     }
 
-    private var _playerState = DCPlayerState.notSetURL
-    public var playerState: DCPlayerState {//播放控件所处状态
-        get {
-            return _playerState
-        }
-        set {
+    public var playerState = DCPlayerState.notSetURL {//播放控件所处状态
+        willSet {
             if newValue == .notSetURL {
                 hudL.animatDisaper()
             }
             if newValue == .startToPlay {//手动开始播放
                 initPlayer()
                 isShowBuffV = true
-                self.playerState = .playing
             }
             if newValue == .readyToPlay {//系统加载完开始的一段视频 准备好了播放
                 totalTime = CMTimeGetSeconds(videoItem.duration)
@@ -114,13 +108,13 @@ open class DCPlayerV: UIView {
             if newValue == .playing {//播放视频
                 dcPlayer!.play()
                 rePlayBtn.alpha = 0
-                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_pause".BundleImgStr), for: .normal)
+                playCenterBtn.setImage("DCPlayer_pause".img, for: .normal)
                 bigImgV.animatDisaper()
                 isHandOn = false
             }
             if newValue == .paused {//暂停视频
                 isShowBuffV = false
-                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
+                playCenterBtn.setImage("DCPlayer_play".img, for: .normal)
                 dcPlayer!.pause()
             }
             if newValue == .playedToTheEnd {
@@ -129,17 +123,11 @@ open class DCPlayerV: UIView {
             if newValue == .buffering {
                 isShowBuffV = true
             }
-            if newValue == .bufferFinished {
-                if !isHandOn {//如果不是手动暂停, 那么自动继续播放
-                    self.playerState = .playing
-                }
-            }
             if newValue == .error {
                 isShowBuffV = false
                 errorBlock?()
                 //                showPlayerMes(":( 视频不见了\n请重试或联系客服", autoDisaper: false)
             }
-            _playerState = newValue//同步状态
         }
     }
     
@@ -161,6 +149,7 @@ open class DCPlayerV: UIView {
         isHandOn = true
         if playerState == .notSetURL {
             playerState = .startToPlay
+            playerState = .playing
         }else if playerState == .playing {
             playerState = .paused
         }else{
@@ -243,6 +232,9 @@ open class DCPlayerV: UIView {
                     playerState = .buffering
                 case "playbackLikelyToKeepUp":
                     playerState = .bufferFinished
+                    if !isHandOn {//如果不是手动暂停, 那么自动继续播放
+                        playerState = .playing
+                    }
                 default:
                     return
                 }
@@ -310,6 +302,7 @@ open class DCPlayerV: UIView {
         playerV.nameL.text = "轻量视频播放控件"
         if isPlayNow {
             playerV.playerState = .startToPlay
+            playerV.playerState = .playing
         }
         
         return playerV
@@ -324,18 +317,19 @@ open class DCPlayerV: UIView {
     
     public func changeVideo(_ videoUrl: URL) {
         self.videoUrl = videoUrl
-        self.playerState = .startToPlay
+        playerState = .startToPlay
+        playerState = .playing
     }
     //MARK:-UI
     public func setUI() {//初始化界面
-        leftGesImgV.image = UIImage.init(named: "DCBrightness".BundleImgStr)
-        centerGesImgV.image = UIImage.init(named: "DCSchedule".BundleImgStr)
-        rightGesImgV.image = UIImage.init(named: "DCVolume".BundleImgStr)
-        backBtn.setImage(UIImage.init(named: "DCPlayer_back".BundleImgStr), for: .normal)
-        playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
-        fullBtn.setImage(UIImage.init(named: "DCPlayer_fullscreen".BundleImgStr), for: .normal)
+        leftGesImgV.image = "DCBrightness".img
+        centerGesImgV.image = "DCSchedule".img
+        rightGesImgV.image = "DCVolume".img
+        backBtn.setImage("DCPlayer_back".img, for: .normal)
+        playCenterBtn.setImage("DCPlayer_play".img, for: .normal)
+        fullBtn.setImage("DCPlayer_fullscreen".img, for: .normal)
 
-        sliderV.setThumbImage(UIImage.init(named: "DCPlayer_slider_thumb".BundleImgStr), for: UIControlState())
+        sliderV.setThumbImage("DCPlayer_slider_thumb".img, for: UIControlState())
         lowControlV.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         progressV.progressTintColor = UIColor.white.withAlphaComponent(0.6)
         progressV.trackTintColor = UIColor.white.withAlphaComponent(0.3)
@@ -407,7 +401,8 @@ open class DCPlayerV: UIView {
     //MARK:-变量
     public var isFullScreen: Bool = false {//是否全屏
         didSet {
-            fullBtn.setImage(isFullScreen ?  UIImage.init(named: "DCPlayer_portialscreen.png".BundleImgStr) :  UIImage.init(named: "DCPlayer_fullscreen.png".BundleImgStr), for: .normal)
+            
+            fullBtn.setImage(isFullScreen ?  "DCPlayer_portialscreen.png".img : "DCPlayer_fullscreen.png".img, for: .normal)
             __CurVC().navigationController?.interactivePopGestureRecognizer?.isEnabled = !isFullScreen
             DispatchQueue.main.async {
                 self.frame = self.isFullScreen ? self.fullScreenFrame : self.normalFrame
@@ -546,13 +541,13 @@ extension UIView {
 extension Double {
     var timeStr: String {
         let miniter = Int(self/60)
-        let second = Int(self.truncatingRemainder(dividingBy: 60))
+        let second = Int(truncatingRemainder(dividingBy: 60))
         return "\(miniter < 10 ? "0" : "")\(miniter):\(second < 10 ? "0" : "")\(second)"
     }
 }
 
 extension String {
-    var BundleImgStr: String {
-        return "PlayerImgs.bundle/\(self)"
+    var img: UIImage {
+        return UIImage.init(named: self, in: Bundle.init(url: Bundle.init(for: DCPlayerV.self).url(forResource: "PlayerImgs", withExtension: "bundle")!)!, compatibleWith: nil)!
     }
 }
