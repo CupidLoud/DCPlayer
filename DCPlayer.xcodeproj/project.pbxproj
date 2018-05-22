@@ -18,7 +18,7 @@
 		0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0934BBE620AABC7D00674676 /* DCHomeVC.xib */; };
 		0945BD9F20ABCE0A00FFC2A2 /* DCBrightChangeV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */; };
 		09638BAD20AD790000D1C12C /* DCPlayerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09638BAC20AD790000D1C12C /* DCPlayerV.swift */; };
-		09D91C0F20B3A6F0005A5EDE /* PlayerImgs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09D91C0E20B3A6F0005A5EDE /* PlayerImgs.bundle */; };
+		09D91C1220B3B42D005A5EDE /* PlayerImgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		0934BBE620AABC7D00674676 /* DCHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCHomeVC.xib; sourceTree = "<group>"; };
 		0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBrightChangeV.swift; sourceTree = "<group>"; };
 		09638BAC20AD790000D1C12C /* DCPlayerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlayerV.swift; sourceTree = "<group>"; };
-		09D91C0E20B3A6F0005A5EDE /* PlayerImgs.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PlayerImgs.bundle; sourceTree = "<group>"; };
+		09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlayerImgs.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 				09638BAC20AD790000D1C12C /* DCPlayerV.swift */,
 				0907CE5020AAB7B5009C2AF6 /* DCPlayerV.xib */,
 				0945BD9E20ABCE0A00FFC2A2 /* DCBrightChangeV.swift */,
-				09D91C0E20B3A6F0005A5EDE /* PlayerImgs.bundle */,
+				09D91C1120B3B42D005A5EDE /* PlayerImgs.xcassets */,
 			);
 			path = DCPlayer;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D91C0F20B3A6F0005A5EDE /* PlayerImgs.bundle in Resources */,
+				09D91C1220B3B42D005A5EDE /* PlayerImgs.xcassets in Resources */,
 				0934BBE820AABC7D00674676 /* DCHomeVC.xib in Resources */,
 				0907CE5220AAB7B5009C2AF6 /* DCPlayerV.xib in Resources */,
 				0907CE4820AAB3DE009C2AF6 /* LaunchScreen.storyboard in Resources */,

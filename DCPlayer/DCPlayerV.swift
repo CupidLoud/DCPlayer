@@ -114,13 +114,13 @@ open class DCPlayerV: UIView {
             if newValue == .playing {//播放视频
                 dcPlayer!.play()
                 rePlayBtn.alpha = 0
-                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_pause".BundleImgStr), for: .normal)
+                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_pause"), for: .normal)
                 bigImgV.animatDisaper()
                 isHandOn = false
             }
             if newValue == .paused {//暂停视频
                 isShowBuffV = false
-                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
+                playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play"), for: .normal)
                 dcPlayer!.pause()
             }
             if newValue == .playedToTheEnd {
@@ -328,14 +328,14 @@ open class DCPlayerV: UIView {
     }
     //MARK:-UI
     public func setUI() {//初始化界面
-        leftGesImgV.image = UIImage.init(named: "DCBrightness".BundleImgStr)
-        centerGesImgV.image = UIImage.init(named: "DCSchedule".BundleImgStr)
-        rightGesImgV.image = UIImage.init(named: "DCVolume".BundleImgStr)
-        backBtn.setImage(UIImage.init(named: "DCPlayer_back".BundleImgStr), for: .normal)
-        playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play".BundleImgStr), for: .normal)
-        fullBtn.setImage(UIImage.init(named: "DCPlayer_fullscreen".BundleImgStr), for: .normal)
+        leftGesImgV.image = UIImage.init(named: "DCBrightness")
+        centerGesImgV.image = UIImage.init(named: "DCSchedule")
+        rightGesImgV.image = UIImage.init(named: "DCVolume")
+        backBtn.setImage(UIImage.init(named: "DCPlayer_back"), for: .normal)
+        playCenterBtn.setImage(UIImage.init(named: "DCPlayer_play"), for: .normal)
+        fullBtn.setImage(UIImage.init(named: "DCPlayer_fullscreen"), for: .normal)
 
-        sliderV.setThumbImage(UIImage.init(named: "DCPlayer_slider_thumb".BundleImgStr), for: UIControlState())
+        sliderV.setThumbImage(UIImage.init(named: "DCPlayer_slider_thumb"), for: UIControlState())
         lowControlV.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         progressV.progressTintColor = UIColor.white.withAlphaComponent(0.6)
         progressV.trackTintColor = UIColor.white.withAlphaComponent(0.3)
@@ -407,7 +407,7 @@ open class DCPlayerV: UIView {
     //MARK:-变量
     public var isFullScreen: Bool = false {//是否全屏
         didSet {
-            fullBtn.setImage(isFullScreen ?  UIImage.init(named: "DCPlayer_portialscreen.png".BundleImgStr) :  UIImage.init(named: "DCPlayer_fullscreen.png".BundleImgStr), for: .normal)
+            fullBtn.setImage(isFullScreen ?  UIImage.init(named: "DCPlayer_portialscreen") :  UIImage.init(named: "DCPlayer_fullscreen"), for: .normal)
             __CurVC().navigationController?.interactivePopGestureRecognizer?.isEnabled = !isFullScreen
             DispatchQueue.main.async {
                 self.frame = self.isFullScreen ? self.fullScreenFrame : self.normalFrame
@@ -551,8 +551,3 @@ extension Double {
     }
 }
 
-extension String {
-    var BundleImgStr: String {
-        return "PlayerImgs.bundle/\(self)"
-    }
-}
