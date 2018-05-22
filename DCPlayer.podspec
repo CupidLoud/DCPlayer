@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DCPlayer"
-  s.version      = "1.4"
+  s.version      = "master"
   s.summary      = "a light weight and easy to use AVPlayer to play video"
 
   s.homepage     = "https://github.com/CupidLoud/DCPlayer"
